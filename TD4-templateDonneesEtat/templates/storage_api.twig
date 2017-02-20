@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Cookies -->
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Templates, données, état</title>
+    </head>
+    
+    <body>
+        <section>
+            <!-- Question 1 -->
+            <p>Cette page a été visitée <span id="cpt">0</span> fois !</p>
+            <script>
+                var b = document.getElementById('cpt');
+                if (localStorage['cpt'] === undefined || localStorage['cpt'] === NaN) {
+                    localStorage['cpt'] = 1;
+                } else {
+                    localStorage['cpt']++;
+                }
+                b.innerHTML = localStorage['cpt'];
+                console.log(b.innerHTML);
+                // console.log(localStorage['cpt']);
+                //     localStorage['cpt'] = 0;
+                // console.log(localStorage['cpt']);
+                // delete localStorage['cpt'];
+            /* <!-- Question 2 --> */
+            if (b.innerHTML  == 1000000)
+                alert("Félicitation ! Vous êtes le millionème visiteur de cette page");
+            </script>
+            <!-- Question 3 -->
+            <!-- taper dans la console :
+            localStorage['cpt'] = 999999; et actualiser -->
+        </section>
+    </body>
+</html>

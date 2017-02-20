@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>TD5</title>
+        <style>
+            table {
+                border-collapse: collapse;   
+            }
+            td {
+                border : solid 1px black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <section>
+            <table id='myTable'>
+                <thead>
+                    <tr id='myTr'>
+                        <td>pseudo</td>
+                        <td id='myTd'>parties</td>
+                        <td>gagnées</td>
+                        <td>couleur préférée</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {#<tr>#}
+                    {#    <td>{{ userlist[0].login }}</td>#}
+                    {#    <td>{{ userlist[0].parties }}</td>#}
+                    {#    <td>{{ userlist[0].gagnees }}</td>#}
+                    {#    <td>{{ userlist[0].couleur1 }}</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                    {#    <td>{{ userlist[1].login }}</td>#}
+                    {#    <td>{{ userlist[1].parties }}</td>#}
+                    {#    <td>{{ userlist[1].gagnees }}</td>#}
+                    {#    <td>{{ userlist[1].couleur1 }}</td>#}
+                    {#</tr>#}
+                </tbody>
+            </table>
+           <script>
+                var tbody = document.getElementById('myTable').lastElementChild;
+                
+                for(var i=0, c={{ userlist.length}} ; i<c ; i++) {
+                    var newTr = document.createElement('tr');
+                    tbody.appendChild(newTr);
+                    console.log(i);
+                    var a = "{{userlist[i].login}}";
+                   console.log(a);
+                    var newTd1 = document.createElement('td');
+                    var newTdText1 = document.createTextNode("{{ userlist[i].login }}");
+                    newTd1.appendChild(newTdText1);
+                    // var newTd2 = document.createElement('td');
+                    // var newTdText2 = document.createTextNode("{{ userlist[i].parties }}");
+                    // newTd2.appendChild(newTdText2);
+                    // var newTd3 = document.createElement('td');
+                    // var newTdText3 = document.createTextNode("{{ userlist[i].gagnees }}");
+                    // newTd3.appendChild(newTdText3);
+                    // var newTd4 = document.createElement('td');
+                    // var newTdText4 = document.createTextNode("{{ userlist[i].couleur1 }}");
+                    // newTd4.appendChild(newTdText4);
+                    
+                    tbody.lastElementChild.appendChild(newTd1);
+                    // tbody.lastElementChild.appendChild(newTd2);
+                    // tbody.lastElementChild.appendChild(newTd3);
+                    // tbody.lastElementChild.appendChild(newTd4);
+                }
+           </script>
+        </section>
+    </body>
+</html>

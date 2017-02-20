@@ -1,0 +1,22 @@
+#jeu td
+{
+    width:120px;
+    height:120px;
+    text-align:center;
+    border: solid 2px blue;
+    border-radius: 60px;
+    background-color: white;
+}
+#jeu table
+{
+    background-color:blue;
+}
+
+#jeu td.joueur1
+{
+    background-color: yellow;
+}
+#jeu td.joueur2
+{
+    background-color: red;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./include/style.css" type="text/css"/>
+    <title>Post-it</title>
+</head>
+<body>
+    <aside>
+        <span><a href="/signup">Inscription</a></span>
+        <span><a href="/login">Connexion</a></span>
+        <span><a href="/logout">Déconnexion</a></span>
+    </aside>
+    <section id="postitZone">
+        <!-- Affichage des post-it -->
+    </section>
+    
+    <script>
+        var secPost = document.getElementById('postitZone');
+        {% for i in messagelist %}
+            // création des éléments
+            var div = document.createElement('div');
+            var p1 = document.createElement('p');
+            var p2 = document.createElement('p');
+            
+            // ajout des attributs
+            var style = "z-index: {{i.id}};";
+            style += "left: {{i.x}}px;";
+            style += "top: {{i.y}}px;";
+            div.style = style
+            div.className = "postit";
+            
+            // création du contenu
+            var p1Text = document.createTextNode("Le {{i.datetime}} par {{i.user}}");
+            var p2Text = document.createTextNode("{{i.text}}");
+            
+            // ajout du contenu
+            p1.appendChild(p1Text);
+            p2.appendChild(p2Text);
+            
+            // insertion des éléments au document
+            div.appendChild(p1);
+            div.appendChild(p2);
+            secPost.appendChild(div);
+        {% endfor %}
+    </script>
+</body>
+</html>

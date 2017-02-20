@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Persistance par URL -->
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Templates, données, état</title>
+    </head>
+    
+    <body>
+        <section>
+            <!-- Question 1 -->
+            <h1 style="text-align:center">{{ nom }}, vous avez visité cette page {{ cnt }} fois !</h1>
+            <!-- Question 3 -->
+            <a href="/{{ nom }}/compteur/{{ cnt }}">Clic !</a>
+            <!-- Question 4 -->
+            {% if  cnt  == 1000000 %}
+            <script>alert("Félicitation ! Vous êtes le millionème visiteur de cette page");</script>
+            {% endif %}
+        </section>
+    </body>
+</html>

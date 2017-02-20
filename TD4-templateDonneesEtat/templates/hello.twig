@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- Template Twig -->
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+            <!-- Question 4 -->
+            <style>
+                {% if color == 'red' %}
+                p, ul, li {color:red;}
+                {% elseif color == 'yellow' %}
+                p, ul, li {color:yellow;}
+                {% else %}
+                {% endif %}
+            </style>
+        <title>Templates, données, état</title>
+    </head>
+    
+    <body>
+        <section>
+            <!-- Question 2 -->
+            <h1 style="text-align:center">Hello {{ nom }}</h1>
+            
+            <!-- Question 3 -->
+            <h1 style="text-align:center">Color {{ color }}</h1>
+            
+            {% if color == 'red' %}
+            <h3>Votre couleur : rouge !</h3>
+            <p>
+                <ul>
+                {% for i in element.red %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+                </ul>
+            </p>
+            {% elseif color == 'yellow' %}
+            <h3>Votre couleur : jaune !</h3>
+            <p>
+                <ul>
+                {% for i in element.yellow %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+                </ul>
+            </p>
+            {% else %}
+            <h3>Vous n'avez pas de couleur !</h3>
+            {% endif %}
+            
+            <!-- Persistance -->
+            <!-- Query String -->
+            <!-- Question 1 et 4 -->
+            <form action="/bye" method="POST">
+                <input type="hidden" id="nom" name="nom" value="{{ nom }}" />
+                <br />
+                <button type="submit">Good bye !</button>
+            </form>
+            <!--<a href="/bye?nom={{ nom }}">Good bye !</a>-->
+        </section>
+    </body>
+</html>

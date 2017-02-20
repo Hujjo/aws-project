@@ -1,0 +1,44 @@
+section>h2{
+    border: solid 1px black;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#profil-picture{
+    position: absolute;
+    left: 75%;
+    top: 15%;
+}
+
+ul{
+    list-style: none;
+}
+
+a:link, a:active, a:visited{
+    color: black;
+}
+a:hover{
+    color: red;
+}
+
+nav>ul>li {
+    display: inline;
+}
+/*
+.tab-pair{
+    background-color: white;
+}
+.tab-impair{
+    background-color: #c9c9c9;
+}
+*/
+tr:nth-child(2n+0) {
+    background-color: #c9c9c9;
+}
+article>h2{
+    font-size: 80%;
+}
+
+article>h2:first-letter{
+    font-size: 250%;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<!--
+    This is an HTML page that contains a CSS and a Javascript file.
+    
+    Run this sample by clicking the 'Preview' button on top;
+    a new tab will open with the current page open.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CV Hugo BERNET</title>
+        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    </head>
+    
+    <body>
+        <h1>Moteur de recherche</h1>
+        <section>
+            <form method="GET" action="https://www.google.com/search">
+                <input type="checkbox" name="q" value="pomme" id="pomme"><label for="pomme">Pomme</label><br>
+                <input type="checkbox" name="q" value="fraise" id="fraise"><label for="fraise">Fraise</label><br>
+                <input type="checkbox" name="q" value="orange" id="orange"><label for="orange">Orange</label><br>
+                <br>
+                <input type="radio" name="hl" value="en">Anglais<br>
+                <input type="radio" name="hl" value="fr">Français<br>
+                <input type="hidden" name="q" value="site:w3schools.com" required>
+                <br>
+                <select name="q">
+                    <option value="mangue">Mangue</option>
+                    <option value="poire">Poire</option>
+                    <option value="banane">Banane</option>
+                </select>
+                <br>
+                <input type="submit" value="Chercher"/>
+            </form>
+        </section>
+        <h1>Curriculum vitae</h1>
+        <section id="perso">
+            <h2>Données personnelles</h2>
+            <dl>
+                <dt>Hugo BERNET</dt>
+                <dt>244 avenue Victor Hugo</dt>
+                <dt>92140 Clamart</dt>
+                <dt>+33 6 72 18 68 92</dt>
+                <dt><a href="mailto:hugo.bernet@hotmail.fr">hugo.bernet@hotmail.fr</a></dt>
+                <dd>Né le 22/09/1993 (22 ans)</dd>
+                <dd>Permis B</dd>
+            </dl>
+            <figure><img src="https://framasoft.net/accueil/img/pingouinVolantRefait.png" id="profil-picture" alt="Photo de profil"></figure>
+        </section>
+        <section id="resume">
+            <h2>CV</h2>
+            <nav>
+                <ul>
+                    <li><a href="#etudes">Études</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                </ul>
+            </nav>
+            <article id="etudes">
+                <h2>Études et diplômes</h2>
+                <table>
+                    <tr>
+                        <th>Année d'obtention</th>
+                        <th>Intitulé</th>
+                        <th>Lieu</th>
+                        <th>Commentaire</th>
+                    </tr>
+                    <tr class="tab-impair">
+                        <td>2014-2018</td>
+                        <td>Diplôme d'Ingénieur en Informatique</td>
+                        <td><a href="http://isty.uvsq.fr">Institut des Sciences et Techniques des Yvelines</a></td>
+                        <td>En préparation</td>
+                    </tr>
+                    <tr class="tab-pair">
+                        <td>2013-2014</td>
+                        <td>DUT Informatique</td>
+                        <td><a href="http://www.iut-orsay.u-psud.fr">IUT d'Orsay</a></td>
+                        <td>Année spéciale</td>
+                    </tr>
+                </table>
+            </article>
+            <article id="competences">
+                <h2>Compétences</h2>
+                <h5>Langages de programmation</h5>
+                <h6>Logiciel</h6>
+                <ul>
+                    <li>C</li>
+                    <li>C++</li>
+                </ul>
+                <h6>Web</h6>
+                <ul>
+                    <li>HTML 5</li>
+                    <li>CSS 3</li>
+                    <li>Javascript</li>
+                    <li>PHP 5.5</li>
+                    <li>Node JS (Express)</li>
+                </ul>
+            </article>
+            <article id="experiences">
+                <h2>Expériences</h2>
+                <h5>Professionnelles</h5>
+                <h6>Informatique</h6>
+                <ul>
+                    <li>Stage chez ICI Montreuil<br>Développement d'un dashboard en NodeJS</li>
+                    <li>Stage chez Ingéréa SAS<br>Développement d'un visualisateur de schémas électriques en Javascript</li>
+                </ul>
+                <h6>Autres domaines</h6>
+                <ul>
+                    <li>Stage chez Cryostar SAS<br>Participation au montage d'un cours technique sur automate</li>
+                </ul>
+                <h5>Projets universitaires</h5>
+                <h6>2016-2017</h6>
+                <ul>
+                    <li>Développement d'un mini-shell en c</li>
+                    <li>Développement de fonctions d'ordonnancement pour un simulateur en c</li>
+                    <li>Développement d'une base de données sur la gestion d'un cabinet médical en Oracle SQL</li>
+                </ul>
+                <h6>2015-2016</h6>
+                <h6>2014-2015</h6>
+                <h6>2013-2014</h6>
+            </article>
+            <article id="hobbies">
+                <h2>Hobbies</h2>
+                <h5>Mandat d'élu</h5>
+                <ul>
+                    <li>Élu en Commission de Formation et Vie Universitaire de l'UVSQ (2016-2018)</li>
+                    <li>Élu en Conseil Académique de l'Université Paris-Saclay</li>
+                </ul>
+                <h5>Vie associative</h5>
+                <ul>
+                    <li>Trésorier de la fédération des associations étudiantes de l'Université (Interassos UVSQ)<br>juin 2015 - février 2016 et juin 2016 à aujourd'hui</li>
+                    <li>Président d'Interassos UVSQ de février à juin 2016 </li>
+                    <li>Chef scout pour 8-11 ans ; 11-14 ans; 14-17 ans</li>
+                    <li>Chargé de mission en communication dans un groupe scout local</li>
+                    <li>Membre de la commission moyen de LaToileScoute (promotion du scoutisme)</li>
+                </ul>
+                <h5>Sport et culure</h5>
+                <ul>
+                    <li>Danse contemporaine</li>
+                    <li>Cirque</li>
+                    <li>Lecture</li>
+                    <li>Randonnée</li>
+                    <li>Judo</li>
+                </ul>
+            </article>
+        </section>
+        <!-- load scripts at the bottom of your page -->
+        <script src="js/site.js"></script>
+    </body>
+</html>

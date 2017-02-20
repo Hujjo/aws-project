@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Cookies -->
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Templates, données, état</title>
+    </head>
+    
+    <body>
+        <section>
+            <!-- Question 1 -->
+            <p>Cette page a été visitée {{ cpt }} fois !</p>
+            <!-- Question 2 -->
+            {% if  cpt  == 1000000 %}
+            <script>alert("Félicitation ! Vous êtes le millionème visiteur de cette page");</script>
+            {% endif %}
+        </section>
+    </body>
+</html>
