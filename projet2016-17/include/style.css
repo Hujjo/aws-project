@@ -1,0 +1,168 @@
+body {
+    background-color: #EEEEEE;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#calendar{
+    margin: auto;
+    font-size: 10pt;
+    color: blue;
+}
+
+#calendar table {
+    background: #EEEEEE url(../images/background_2.jpg);
+}
+
+#calendar .header {
+    color: black;
+    background-color: white;
+    position: relative;
+    width: 30px;
+    text-align: center;
+    top: 0px;
+    font-size: 20pt;
+    right: -75px
+}
+
+.actions {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+section{
+    margin: auto;
+    width: 800px;
+}
+
+#calendar table, th, td {
+    border: 4px solid #4e446d;
+    
+}
+
+.month{
+    font-weight: 600;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #1B00D2;
+}
+
+.sign{
+    text-align: right;
+    font-size: 1.4em;
+}
+
+.actions a img{
+    position: relative;
+    top: 7px;
+}
+
+
+/*
+.previous{
+    background: #EEEEEE url(../images/prev.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.next{
+    background: #EEEEEE url(../images/next.png);
+}*/
+
+/*
+.previous,.next{
+    
+    text-decoration: none;
+}*/
+
+.choices {
+    width: 105px;
+    height: 105px;
+}
+.date {
+    width: 105px;
+    height: 25px;
+}
+.squareChoice {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.numberChoices {
+    font-size: 1.5em;
+}
+
+.sigCal,.calSign{
+    text-align: right;
+    font-size: 1.4em;
+}
+
+fieldset
+{
+   background: #EEEEEE url(../images/background.jpg);
+   height : 300px;
+   width : 400px;
+   margin: auto;
+   margin-top: 75px;
+}
+
+.log_pwd
+{   text-align: center;
+    margin-top: 50px;
+}
+
+.log_pwd_col
+{   text-align: center;
+    margin-top: 50px;
+}
+
+#username
+{
+    margin-left: 25px;
+    font-size: 1em;
+}
+
+#pass
+{
+    margin-left: 29px;
+    font-size: 1em;
+    
+}
+
+#login
+{
+    margin-left: 25px;
+    font-size: 1em;
+}
+
+#pwd
+{
+    margin-left: 29px;
+    font-size: 1em;
+}
+
+#color{
+    margin-right:150px;
+    margin-left: 55px;
+    font-size: 1em;
+}
+
+.submit
+{   text-align: center;
+    margin-left: 70px;
+    width: 75px;
+    font-size: 1em;
+    font-family: arial black;
+}
+
+.footer{
+    text-align: center;
+    padding-top: 150px;
+}

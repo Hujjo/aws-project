@@ -13,7 +13,6 @@
             }
         </style>
     </head>
-    
     <body>
         <section>
             <table id='myTable'>
@@ -26,48 +25,65 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {#<tr>#}
-                    {#    <td>{{ userlist[0].login }}</td>#}
-                    {#    <td>{{ userlist[0].parties }}</td>#}
-                    {#    <td>{{ userlist[0].gagnees }}</td>#}
-                    {#    <td>{{ userlist[0].couleur1 }}</td>#}
-                    {#</tr>#}
-                    {#<tr>#}
-                    {#    <td>{{ userlist[1].login }}</td>#}
-                    {#    <td>{{ userlist[1].parties }}</td>#}
-                    {#    <td>{{ userlist[1].gagnees }}</td>#}
-                    {#    <td>{{ userlist[1].couleur1 }}</td>#}
-                    {#</tr>#}
+{% for i in range(0,userlist.length-1) %}
+                    <tr>
+                        <td>{{ userlist[i].login }}</td>
+                        <td>{{ userlist[i].parties }}</td>
+                        <td>{{ userlist[i].gagnees }}</td>
+                        <td><span style="display: inline-block; width: 60px; height: 20px;
+                        background-color: {{ userlist[i].couleur1 }};"></span></td>
+                    </tr>
+{% endfor %}
                 </tbody>
             </table>
-           <script>
-                var tbody = document.getElementById('myTable').lastElementChild;
-                
-                for(var i=0, c={{ userlist.length}} ; i<c ; i++) {
-                    var newTr = document.createElement('tr');
-                    tbody.appendChild(newTr);
-                    console.log(i);
-                    var a = "{{userlist[i].login}}";
-                   console.log(a);
-                    var newTd1 = document.createElement('td');
-                    var newTdText1 = document.createTextNode("{{ userlist[i].login }}");
-                    newTd1.appendChild(newTdText1);
-                    // var newTd2 = document.createElement('td');
-                    // var newTdText2 = document.createTextNode("{{ userlist[i].parties }}");
-                    // newTd2.appendChild(newTdText2);
-                    // var newTd3 = document.createElement('td');
-                    // var newTdText3 = document.createTextNode("{{ userlist[i].gagnees }}");
-                    // newTd3.appendChild(newTdText3);
-                    // var newTd4 = document.createElement('td');
-                    // var newTdText4 = document.createTextNode("{{ userlist[i].couleur1 }}");
-                    // newTd4.appendChild(newTdText4);
-                    
-                    tbody.lastElementChild.appendChild(newTd1);
-                    // tbody.lastElementChild.appendChild(newTd2);
-                    // tbody.lastElementChild.appendChild(newTd3);
-                    // tbody.lastElementChild.appendChild(newTd4);
-                }
-           </script>
+            <input type="button" name="refresh" id="refresh" value="Refresh" />
+            <a href="/logout">Déconnexion</a>
         </section>
+        <script>
+            let i = document.querySelector('#refresh');
+            let tb = document.querySelector('tbody');
+            i.onclick = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'json';
+                xhr.open('GET','/api/userlist');
+                xhr.onload = function(e) {
+                    console.log('Successfull');
+                    /* pseudo-code
+                    création 1 tr et 1 td
+                    boucle sur le nb de user
+                        boucle sur le nb d'attributs
+                            ajout attribut à td
+                            ajout td à tr
+                        fin boucle
+                        ajout tr à tb
+                    fin boucle
+                    maj tb auto ???
+                    */
+                    let tr = document.createElement('tr');
+                    let td = document.createElement('td');
+                    let tn;
+                    let t;
+                    for (var i=0 ; i<xhr.response.length ; i++) {    // loop on user
+                        for (var j=0 ; j<xhr.response[i].length ; j++) {    // loop on attributs
+                            t = xhr.response[i][j];
+                            tn = document.createTextNode(t);
+                            td.appendChild(tn);
+                            tr.appendChild(td);
+                        }
+                        tb.appendChild(tr);
+                    }
+                }
+                xhr.onerror = function(e) {
+                    console.log('Fail');
+                }
+                xhr.onabort = function(e) {
+                    console.log('Cancel by user');
+                }
+                xhr.onprogress = function(e) {
+                    console.log('Download...');
+                }
+                xhr.send();
+            }
+        </script>
     </body>
 </html>

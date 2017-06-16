@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+{% block title %}Signin{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <nav>
+        {% if session.id == null %}
+        <div class="sigCal">
+            <a href="/signup" id="linkToSignup">Sing up</a>
+            <a href="/" id="linkToCalendra">Calendar</a>
+        </div>
+        {% else %}
+        <a href="/logout" id="linkToLogout">Log out</a>
+        {% endif %}
+    </nav>
+    <section id="signin">
+        <form action="/signin" method="POST" id="formLog">
+            <fieldset>
+             <div class="all">
+                 
+               <div class="log_pwd"> 
+               
+                <label for="username"><b>Username</b></label>
+                <input type="text" name="username" id="username" class="username" required />
+                <br/><br/><br/>
+               <label for="pass"><b>Password</b></label>
+                <input type="password" name="pass" id="pass" class="pass" required />
+                <br/><br/><br/><br/><br/>
+               </div>
+               
+                <input class="submit"type="submit" value="Sign in"/>
+                
+             </div>
+            </fieldset>
+        </form>
+    </section>
+{% endblock %}

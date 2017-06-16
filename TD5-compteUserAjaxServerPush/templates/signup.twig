@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>TD5</title>
+</head>
+<body>
+    <input type="hidden" name="error" id="error" class="error" value="{{ error }}" />
+    <section>
+        <div id="signup">
+            <p id="err_info"></p>
+            <form action="/signup" method="post">
+                <fieldset>
+                    <label for="login">Pseudo </label>
+                    <input type="text" name="login" id="login" class="login" />
+                    <br />
+                    <label for="pass">Mot de passe </label>
+                    <input type="password" name="pass" id="pass" class="pass" />
+                    <br />
+                    <label for="color">Color </label>
+                    <input type="text" name="color" id="color" class="color" />
+                    <br />
+                    <input type="submit" value="Inscription"/>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <script>
+    var err = document.querySelector("#error").getAttribute('value');
+    if(~err.indexOf('Error')) {
+        var errType = 0;
+        console.log(err);
+    } else
+        var errType = null;
+    if(errType == 0) {
+        if(~err.indexOf('ER_DUP_ENTRY')){
+            errType = 1;
+            console.log('match');
+        } else {
+            errType = 2;
+            console.log('no way');
+        }
+    }
+    if (errType != null) {
+        var e = document.querySelector('#err_info');
+        console.log(errType);
+        if(errType == 1)
+            var t = "Veuillez choisir un autre pseudo.";
+        else if (errType == 2)
+            var t = "Veuillez indiquer un pseudo et un mot de passe valide.";
+        var e_t = document.createTextNode(t);
+        e.appendChild(e_t);
+    }
+    </script>
+</body>
+</html>

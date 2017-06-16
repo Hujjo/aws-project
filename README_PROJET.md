@@ -1,13 +1,18 @@
 # PROJET AWS - IATIC 4 - ISTY - UVSQ
 
 # Étudiants
-Éloi Calleja & Hugo Bernet
+Napo Ouadja & Hugo Bernet
 
 # Encadrants
-Luca De Feo & Sébastien Besnier
+Luca De Feo
 
 # Présentation du projet
-Le code source du projet est disponible dans le répertoire "projet" de cet espace de travail.
+Le code source du projet est disponible dans le répertoire "projet2016-17" de cet espace de travail.
+Sous terminal bash, exécuter : mysql-ctl start.
 Lancer l'application "app.js" dans un nouvel onglet.
-Suivez le lien pour vous inscrire puis pour vous connecter.
-Double-cliquez pour insérer un post-it.
+Inscription                 OK
+Connexion                   OK
+Navigation entre les mois   OK
+Affihage des choix          OK
+Ajout d'un choix            OK
+Suppression d'un choix      OK

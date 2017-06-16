@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<!-- Template Twig -->
-
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
@@ -20,6 +18,12 @@
         <section>
             <!-- Question 2 -->
             <h1 style="text-align:center">Hello {{ nom }}</h1>
+            
+            <ul>
+            {% for en, fr in nombres %}
+                <li>{{ en }} signifie {{ fr }}</li>
+            {% endfor %}
+            </ul>
             
             <!-- Question 3 -->
             <h1 style="text-align:center">Color {{ color }}</h1>
@@ -48,13 +52,14 @@
             
             <!-- Persistance -->
             <!-- Query String -->
-            <!-- Question 1 et 4 -->
+            <!-- PARTIE 2 : Question 1 et 2 -->
+            <a href="/bye?nom={{ nom }}">Good bye !</a>
+            <!-- Question 3 et 5 -->
             <form action="/bye" method="POST">
                 <input type="hidden" id="nom" name="nom" value="{{ nom }}" />
                 <br />
                 <button type="submit">Good bye !</button>
             </form>
-            <!--<a href="/bye?nom={{ nom }}">Good bye !</a>-->
         </section>
     </body>
 </html>

@@ -1,0 +1,42 @@
+{% extends "layout.twig" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <nav>
+        {% if session == null %}
+        <div class="sign">
+            <a href="/signup" id="linkToSignup">Sign up</a>
+            <a href="/signin" id="linkToSignin">Sign in</a>
+        </div>
+        {% else %}
+        <em id="username">{{ session.username }}</em>
+        <a href="/logout" id="linkToLogout">Log out</a>
+        {% endif %}
+    </nav>
+    <section>
+        <div class="actions"> 
+            <a href="#" class="previous"><img src="../images/prev.png" alt="Previous"/></a> 
+            <span class="month"> </span>
+            <a href="#" class="next">
+                <img src="../images/next.png" alt="Next"/>
+            </a> 
+        </div>
+        <div id="calendar">
+        </div>
+    </section>
+    <script type="text/javascript" src="../include/init.js"></script>
+    <script type="text/javascript" src="../include/updateCalendar.js"></script>
+    <script type="text/javascript" src="../include/updateChoices.js"></script>
+    <script>       
+        /*
+                UPDATE CALENDAR THE FIRST TIME
+        */
+        drawCalendar(current);
+        getChoices();
+    </script>
+    <script type="text/javascript" src="../include/manageClick.js"></script>
+    <script type="text/javascript" src="../include/nav.js"></script>
+{% endblock %}

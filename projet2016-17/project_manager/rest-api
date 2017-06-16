@@ -1,0 +1,81 @@
+Technology
+
+Serve-side
+    NodeJS
+Client-side
+    HTML5
+    CSS
+    JS
+Client-server interaction
+    AJAX
+Template
+    TWIG
+Data format
+    JSON
+
+Routes
+
+/           : main page
+            : if user is connect, display calendar and a disconnect link
+            : if user is disconnect, display log in form
+/signup     : to create a new user
+            : after a success : connect the user and redirect to /
+/login      : to connect himself. redirect to / after a successfull login
+            : after a fail : rend the same route with an error in template data
+/logout     : to disconnect himself. redirect to / after a successfull logout
+            : after a fail : disconnect again
+/add        : to add a choice. return a successfull/fail code
+/delete     : to remove a choice. return a successfull/fail code
+/choices    : return all choices in JSON format tu update client view after an action
+
+
+Templates
+
+main.twig   : according to template data and session data, 
+            : display log in/sign up form  or calendar
+login.twig  : display log in form, action='FORM', method='/login'
+signup.twig : display sign up form, action='FORM', method='/signup'
+
+Calendar display
+
+js loop
+one month on one page
+one week on two raw
+one day on one cell
+    first raw with the day
+    second raw with choices and number of choices
+direct arrows to change of month
+
+
+Database model
+
+Table user
+    id_user     number(3)       // use an hash function ?
+    username    varchar(32)
+    password    varchar(32)     // use an hash function
+    color       varchar(32)
+    
+Table choice
+    dateChoice  datetime
+    id_user     number(3)
+
+
+link to access to phpmyadmin
+https://aws-project-hujjo.c9users.io/phpmyadmin/
+
+run node and phpmyadmin
+change app.js like this 
+        app.listen(8081);
+use app at https://aws-project-hujjo.c9users.io:8081/
+  
+TODO AJAX
+- Manage data to call good XHR between add and delete a choice
+    => good way
+    => darken numberChoices too (we want not this)
+    => click to undo is only on td's child (we want everywhere which is not user span)
+    => click to delete triggers a add event...
+
+
+TODO front-end
+    => sign in, sign up
+    
